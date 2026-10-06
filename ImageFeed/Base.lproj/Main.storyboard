@@ -29,39 +29,36 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="N24-TX-sZO">
-                                                    <rect key="frame" x="16" y="0.0" width="361" height="195"/>
+                                                    <rect key="frame" x="16" y="4" width="361" height="187"/>
                                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 октября 2026" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BzM-82-n9Y">
-                                                    <rect key="frame" x="24" y="171" width="345" height="16"/>
+                                                    <rect key="frame" x="24" y="171" width="361" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSf-Ru-q9T">
-                                                    <rect key="frame" x="305" y="23" width="44" height="44"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSf-Ru-q9T">
+                                                    <rect key="frame" x="333" y="4" width="44" height="44"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="44" id="1Jr-uo-zz8"/>
-                                                        <constraint firstAttribute="height" constant="44" id="8sb-DA-pTY"/>
+                                                        <constraint firstAttribute="width" constant="44" id="Rxc-YV-8x7"/>
+                                                        <constraint firstAttribute="height" constant="44" id="poS-Qt-Fot"/>
                                                     </constraints>
-                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" image="like_button_on">
-                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
+                                                    <state key="normal" image="like_button_off"/>
                                                 </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="N24-TX-sZO" firstAttribute="top" secondItem="3Sp-Yk-gMF" secondAttribute="top" id="2Rf-Hg-W89"/>
-                                                <constraint firstAttribute="bottom" secondItem="N24-TX-sZO" secondAttribute="bottom" id="BPQ-NG-KSH"/>
+                                                <constraint firstItem="N24-TX-sZO" firstAttribute="top" secondItem="3Sp-Yk-gMF" secondAttribute="top" constant="4" id="2Rf-Hg-W89"/>
+                                                <constraint firstItem="cSf-Ru-q9T" firstAttribute="trailing" secondItem="N24-TX-sZO" secondAttribute="trailing" id="5RE-ed-6Na"/>
+                                                <constraint firstAttribute="bottom" secondItem="N24-TX-sZO" secondAttribute="bottom" constant="4" id="BPQ-NG-KSH"/>
+                                                <constraint firstItem="cSf-Ru-q9T" firstAttribute="top" secondItem="N24-TX-sZO" secondAttribute="top" id="Ek7-Kv-wbI"/>
                                                 <constraint firstItem="N24-TX-sZO" firstAttribute="leading" secondItem="3Sp-Yk-gMF" secondAttribute="leading" constant="16" id="HL8-JV-itl"/>
                                                 <constraint firstItem="BzM-82-n9Y" firstAttribute="leading" secondItem="3Sp-Yk-gMF" secondAttribute="leading" constant="24" id="Wjd-bJ-Ieu"/>
-                                                <constraint firstAttribute="trailing" secondItem="BzM-82-n9Y" secondAttribute="trailing" constant="24" id="Xzd-T2-UvU"/>
+                                                <constraint firstAttribute="trailing" secondItem="BzM-82-n9Y" secondAttribute="trailing" constant="8" id="Xzd-T2-UvU"/>
                                                 <constraint firstAttribute="trailing" secondItem="N24-TX-sZO" secondAttribute="trailing" constant="16" id="hn3-Kg-4e9"/>
-                                                <constraint firstItem="cSf-Ru-q9T" firstAttribute="top" secondItem="3Sp-Yk-gMF" secondAttribute="topMargin" constant="8" id="m2I-5t-Ikh"/>
                                                 <constraint firstAttribute="bottom" secondItem="BzM-82-n9Y" secondAttribute="bottom" constant="8" id="nzg-3K-beX"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cSf-Ru-q9T" secondAttribute="trailing" constant="24" id="rZk-IO-VD9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -80,10 +77,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="UZW-t6-nxk" secondAttribute="bottom" id="UUd-TQ-9eh"/>
-                            <constraint firstItem="UZW-t6-nxk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="foy-rc-Err"/>
-                            <constraint firstItem="UZW-t6-nxk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rl6-cp-rdJ"/>
-                            <constraint firstItem="UZW-t6-nxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zEY-hL-De0"/>
+                            <constraint firstItem="UZW-t6-nxk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P4w-zM-RhF"/>
+                            <constraint firstItem="UZW-t6-nxk" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mGp-Pf-78E"/>
+                            <constraint firstItem="UZW-t6-nxk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="oax-f8-rD4"/>
+                            <constraint firstAttribute="bottom" secondItem="UZW-t6-nxk" secondAttribute="bottom" id="zg0-pl-HQD"/>
                         </constraints>
                     </view>
                     <connections>
@@ -97,6 +94,6 @@
     </scenes>
     <resources>
         <image name="0" width="1600" height="1059"/>
-        <image name="like_button_on" width="88" height="88"/>
+        <image name="like_button_off" width="88" height="88"/>
     </resources>
 </document>
