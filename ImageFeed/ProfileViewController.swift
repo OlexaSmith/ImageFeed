@@ -86,7 +86,7 @@ final class ProfileViewController: UIViewController {
     
     private func setupLogoutButton() {
         guard let avatarImageView = avatarImageView else { return }
-        let image = UIImage(systemName: "ipad.and.arrow.forward")
+        let image = SystemImages.logout
         let button = UIButton.systemButton(with: image!, target: self, action: #selector(didTapLogoutButton))
         button.tintColor = .red
         button.translatesAutoresizingMaskIntoConstraints = false

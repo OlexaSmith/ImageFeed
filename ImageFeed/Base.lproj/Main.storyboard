@@ -21,13 +21,13 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
-                        <segue destination="hO7-wQ-AOf" kind="relationship" relationship="viewControllers" id="989-89-tWd"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="R8U-gQ-Msx"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Zd7-4w-p3q"/>
+                        <segue destination="hO7-wQ-AOf" kind="relationship" relationship="viewControllers" id="bKm-h3-wLw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzm-di-b0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1428" y="-90"/>
+            <point key="canvasLocation" x="-625" y="-383"/>
         </scene>
         <!--Profile -->
         <scene sceneID="VCc-HT-nO8">
@@ -37,7 +37,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="x2i-Pd-eZB"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tab_profile_active" id="YEP-eZ-Q7V"/>
                 </viewController>
@@ -121,7 +121,7 @@
                             <constraint firstAttribute="bottom" secondItem="UZW-t6-nxk" secondAttribute="bottom" id="zg0-pl-HQD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="b5g-0w-0U0"/>
+                    <tabBarItem key="tabBarItem" title="" image="tab_editorial_active" id="Yqm-uE-Iek"/>
                     <navigationItem key="navigationItem" id="Asd-XI-DUS"/>
                     <connections>
                         <outlet property="tableView" destination="UZW-t6-nxk" id="2Ch-Mb-Nu6"/>
@@ -130,21 +130,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="-233"/>
+            <point key="canvasLocation" x="-1897" y="-454"/>
         </scene>
         <!--Single Image View Controller-->
         <scene sceneID="ANl-2q-Vsz">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="Ds3-u4-o5X" customClass="SingleImageViewController" customModule="ImageFeed" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l2I-Zq-29T">
+                    <view key="view" contentMode="scaleAspectFit" id="l2I-Zq-29T">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kav-P7-YfX">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZXH-Pj-p5r">
-                                        <rect key="frame" x="28" y="87" width="1600" height="1059"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZXH-Pj-p5r">
+                                        <rect key="frame" x="0.0" y="0.0" width="1600" height="1059"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
@@ -176,20 +176,20 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="sharing"/>
                                 <connections>
-                                    <action selector="didTapShareButton" destination="Ds3-u4-o5X" eventType="touchUpInside" id="a4Q-MK-XqO"/>
+                                    <action selector="didTapShareButtonWith_sender:" destination="Ds3-u4-o5X" eventType="touchUpInside" id="djc-UO-ckO"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nHb-s6-YAW"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8Xo-lD-8Jj" firstAttribute="leading" secondItem="nHb-s6-YAW" secondAttribute="leading" constant="8" id="1m9-LF-Sxw"/>
-                            <constraint firstItem="Kav-P7-YfX" firstAttribute="top" secondItem="l2I-Zq-29T" secondAttribute="top" id="DaA-VS-ufs"/>
-                            <constraint firstItem="Kav-P7-YfX" firstAttribute="leading" secondItem="nHb-s6-YAW" secondAttribute="leading" id="F5l-gJ-83g"/>
-                            <constraint firstAttribute="bottom" secondItem="Kav-P7-YfX" secondAttribute="bottom" id="Zbe-0i-fOO"/>
+                            <constraint firstItem="Kav-P7-YfX" firstAttribute="top" secondItem="l2I-Zq-29T" secondAttribute="top" id="Own-Jh-Gto"/>
+                            <constraint firstItem="Kav-P7-YfX" firstAttribute="trailing" secondItem="nHb-s6-YAW" secondAttribute="trailing" id="UJc-e4-vCX"/>
+                            <constraint firstAttribute="bottom" secondItem="Kav-P7-YfX" secondAttribute="bottom" id="b8z-Ub-nsU"/>
                             <constraint firstItem="nHb-s6-YAW" firstAttribute="bottom" secondItem="fqN-vU-feM" secondAttribute="bottom" constant="17" id="bBj-Mv-081"/>
                             <constraint firstItem="fqN-vU-feM" firstAttribute="centerX" secondItem="nHb-s6-YAW" secondAttribute="centerX" id="juM-BV-uOP"/>
-                            <constraint firstItem="Kav-P7-YfX" firstAttribute="trailing" secondItem="nHb-s6-YAW" secondAttribute="trailing" id="s9q-0T-fIO"/>
+                            <constraint firstItem="Kav-P7-YfX" firstAttribute="leading" secondItem="nHb-s6-YAW" secondAttribute="leading" id="ljp-S8-3LB"/>
                             <constraint firstItem="nHb-s6-YAW" firstAttribute="top" secondItem="8Xo-lD-8Jj" secondAttribute="top" constant="8" id="ulw-Zh-azo"/>
                         </constraints>
                     </view>
@@ -201,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dE1-SQ-rbF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="616" y="-313"/>
+            <point key="canvasLocation" x="1541.2213740458014" y="-313.38028169014086"/>
         </scene>
     </scenes>
     <resources>
