@@ -307,8 +307,21 @@
                     <view key="view" contentMode="scaleToFill" id="Jl4-Mu-1Bo">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="auth_screen_logo" translatesAutoresizingMaskIntoConstraints="NO" id="wKm-M2-M8N">
+                                <rect key="frame" x="166.66666666666666" y="421" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="MWO-99-UR5"/>
+                                    <constraint firstAttribute="height" constant="60" id="rMq-P5-eMt"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rqz-Lb-RX5"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.10196078431372549" green="0.10588235294117647" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wKm-M2-M8N" firstAttribute="centerY" secondItem="rqz-Lb-RX5" secondAttribute="centerY" id="15O-ow-jAF"/>
+                            <constraint firstItem="wKm-M2-M8N" firstAttribute="centerX" secondItem="rqz-Lb-RX5" secondAttribute="centerX" id="O0T-m8-ogM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jPV-qL-Gxi"/>
                     <connections>

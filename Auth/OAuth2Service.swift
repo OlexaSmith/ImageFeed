@@ -40,6 +40,7 @@ final class OAuth2Service {
     }
     private func makeOAuthTokenRequest(code: String) -> URLRequest? {
         guard var urlComponents = URLComponents(string: "https://unsplash.com/oauth/token") else {
+           print("[OAuth2Service] Не удалось создать URLCommponents")
             return nil
         }
         
@@ -52,6 +53,7 @@ final class OAuth2Service {
         ]
         
         guard let authTokenUrl = urlComponents.url else {
+            print("[OAuth2Service] Не удалось получить URL")
             return nil
         }
         
