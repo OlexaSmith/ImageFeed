@@ -26,7 +26,7 @@ class AuthViewController: UIViewController {
 //MARK: - WebViewViewControllerDelegate
 extension AuthViewController: WebViewViewControllerDelegate {
     func webViewViewController(_vc: WebViewViewController, didAuthenticateWithCode code: String) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
         OAuth2Service.shared.fetchOAthToken(code: code) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -39,6 +39,6 @@ extension AuthViewController: WebViewViewControllerDelegate {
         }
     }
     func webViewViewControllerDidCancel(_vc: WebViewViewController) {
-        dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }

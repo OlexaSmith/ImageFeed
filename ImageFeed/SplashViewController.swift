@@ -15,7 +15,7 @@ final class SplashViewController: UIViewController {
             performSegue(withIdentifier: showAuthenticationScreenSegueIdentifier, sender: nil)
         }
     }
-    private    func switchToTabBarController() {
+    private func switchToTabBarController() {
         guard let window = UIApplication.shared.connectedScenes
             .compactMap({$0 as? UIWindowScene})
             .flatMap({$0.windows})
