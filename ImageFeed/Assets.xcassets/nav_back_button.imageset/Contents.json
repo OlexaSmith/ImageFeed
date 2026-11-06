@@ -1,11 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "Backward.png",
+      "filename" : "Left Accessory.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Left Accessory 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -17,5 +18,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }
