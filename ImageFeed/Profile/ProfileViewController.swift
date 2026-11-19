@@ -1,12 +1,5 @@
-//
-//  ProfileViewController.swift
-//  ImageFeed
-//
-//  Created by Olya on 10.10.2026.
-//
-
 import UIKit
-
+import Kingfisher
 final class ProfileViewController: UIViewController {
     
     private var avatarImageView: UIImageView?
@@ -14,14 +7,35 @@ final class ProfileViewController: UIViewController {
     private var nicknameLabel: UILabel?
     private var descriptionLabel: UILabel?
     private var logoutButton: UIButton?
+    private var profileImageServiceObserver: NSObjectProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupAvatar()
         setupLabels()
-        setupLogoutButton()
+        setupLogoutButton()       
+        
+        if let profile = ProfileService.shared.profile {
+            updateProfileDetails(profile: profile)
+        }
+        profileImageServiceObserver = NotificationCenter.default.addObserver(forName: ProfileImageService.didChangeNotification, object: nil, queue: .main) { [weak self] _ in
+            guard let self = self else { return }
+            self.updateAvatar()
+        }
+        updateAvatar()
     }
-    
+    private func updateAvatar() {
+        guard let profileImageURL = ProfileImageService.shared.avatarURL,
+              let url = URL(string: profileImageURL)
+        else { return }
+        let placeholderImage = UIImage(systemName: "person.circle.fill")?.withTintColor(.lightGray, renderingMode: .alwaysOriginal)
+        avatarImageView?.kf.setImage(with: url, placeholder: placeholderImage, options: [ .transition(.fade(1)), .cacheOriginalImage])
+    }
+    private func updateProfileDetails(profile: Profile) {
+        nameLabel?.text = profile.name
+        nicknameLabel?.text = profile.loginName
+        descriptionLabel?.text = profile.bio
+    }
     private func setupAvatar() {
         let avatarImage = UIImage(named: "avatar_pic")
         let imageView = UIImageView(image: avatarImage)
@@ -43,7 +57,7 @@ final class ProfileViewController: UIViewController {
     private func setupLabels() {
         guard let avatarImageView = avatarImageView else { return }
         let name = UILabel()
-        name.text = "Екатерина Новикова"
+        name.text = ""
         name.textColor = .white
         name.font = UIFont.systemFont(ofSize: 23, weight: .bold)
         
@@ -56,7 +70,7 @@ final class ProfileViewController: UIViewController {
         nameLabel = name
         
         let nickname = UILabel()
-        nickname.text = "@ekaterina_nov"
+        nickname.text = ""
         nickname.textColor = UIColor(red: 174/255, green: 175/255, blue: 180/255, alpha: 1)
         nickname.font = UIFont.systemFont(ofSize: 13)
         
@@ -70,7 +84,7 @@ final class ProfileViewController: UIViewController {
         nicknameLabel = nickname
         
         let description = UILabel()
-        description.text = "Hello, world!"
+        description.text = ""
         description.textColor = .white
         description.font = UIFont.systemFont(ofSize: 13)
         
@@ -103,3 +117,4 @@ final class ProfileViewController: UIViewController {
     @objc private func didTapLogoutButton() {
     }
 }
+
