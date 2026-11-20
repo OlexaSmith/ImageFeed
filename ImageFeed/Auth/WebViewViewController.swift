@@ -8,6 +8,7 @@ protocol WebViewViewControllerDelegate: AnyObject {
 }
 enum WebViewConstants {
     static let unsplashAuthorizeURLString = "https://unsplash.com/oauth/authorize"
+    static let progressPrecision: Double = 0.0001
 }
 
 final class WebViewViewController: UIViewController {
@@ -16,19 +17,6 @@ final class WebViewViewController: UIViewController {
     weak var delegate: WebViewViewControllerDelegate?
     private var estimatedProgressObservation: NSKeyValueObservation?
     
-    
-    // override func viewWillAppear(_ animated: Bool) {
-    //   super.viewWillAppear(animated)
-    // webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
-    //}
-    
-    //override func viewDidDisappear(_ animated: Bool) {
-    //  super.viewDidDisappear(animated)
-    //webView.removeObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), context: nil)
-    //if isMovingFromParent {
-    //  delegate?.webViewViewControllerDidCancel(_vc: self)
-    // }
-    //}
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.navigationDelegate = self
@@ -41,7 +29,7 @@ final class WebViewViewController: UIViewController {
     }
     private func updateProgress() {
         progressView.progress = Float(webView.estimatedProgress)
-        progressView.isHidden = fabs(webView.estimatedProgress - 1.0) <= 0.0001
+        progressView.isHidden = fabs(webView.estimatedProgress - 1.0) <= WebViewConstants.progressPrecision
     }
     private func loadAuthView() {
         guard var urlComponents = URLComponents(string: WebViewConstants.unsplashAuthorizeURLString) else {

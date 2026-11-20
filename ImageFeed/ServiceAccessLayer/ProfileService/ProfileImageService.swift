@@ -31,7 +31,7 @@ final class ProfileImageService {
         guard let token = OAuth2TokenStorage().token else {
             return
         }
-        guard let url = URL(string: "https://api.unsplash.com/users/\(username)") else {
+        guard let url = URL(string: "\(Constants.defaultBaseURLString)/users/\(username)") else {
             completion(.failure(ProfileImageServiceError.invalidRequest))
             return
         }

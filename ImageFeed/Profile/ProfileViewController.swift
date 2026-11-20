@@ -19,7 +19,7 @@ final class ProfileViewController: UIViewController {
             updateProfileDetails(profile: profile)
         }
         profileImageServiceObserver = NotificationCenter.default.addObserver(forName: ProfileImageService.didChangeNotification, object: nil, queue: .main) { [weak self] _ in
-            guard let self = self else { return }
+            guard let self else { return }
             self.updateAvatar()
         }
         updateAvatar()
@@ -32,9 +32,21 @@ final class ProfileViewController: UIViewController {
         avatarImageView?.kf.setImage(with: url, placeholder: placeholderImage, options: [ .transition(.fade(1)), .cacheOriginalImage])
     }
     private func updateProfileDetails(profile: Profile) {
-        nameLabel?.text = profile.name
-        nicknameLabel?.text = profile.loginName
-        descriptionLabel?.text = profile.bio
+        if profile.name.isEmpty {
+            nameLabel?.text = "Имя не указано"
+        } else {
+            nameLabel?.text = profile.name
+        }
+        if profile.loginName.isEmpty {
+            nicknameLabel?.text = "Никнейм не указан"
+        } else {
+            nicknameLabel?.text = profile.loginName
+        }
+        if let bio = profile.bio, !bio.isEmpty {
+            descriptionLabel?.text = "Профиль не заполнен"
+        } else {
+            descriptionLabel?.text = profile.bio
+        }
     }
     private func setupAvatar() {
         let avatarImage = UIImage(named: "avatar_pic")
@@ -57,7 +69,6 @@ final class ProfileViewController: UIViewController {
     private func setupLabels() {
         guard let avatarImageView = avatarImageView else { return }
         let name = UILabel()
-        name.text = ""
         name.textColor = .white
         name.font = UIFont.systemFont(ofSize: 23, weight: .bold)
         

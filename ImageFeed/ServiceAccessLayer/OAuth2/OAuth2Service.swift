@@ -60,7 +60,7 @@ final class OAuth2Service {
         guard
             var urlComponents = URLComponents(string: "https://unsplash.com/oauth/token")
         else {
-            assertionFailure("Failed to create URL")
+            print("Failed to create URL")
             return nil
         }
         

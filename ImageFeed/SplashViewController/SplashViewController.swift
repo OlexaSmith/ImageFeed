@@ -80,6 +80,5 @@ extension SplashViewController: AuthViewControllerDelegate {
         dismiss(animated: true)
         guard let token = storage.token else { return }
         fetchProfile(token: token)
-        switchToTabBarController()
     }
 }
